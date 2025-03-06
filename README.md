@@ -1,54 +1,69 @@
-# React + TypeScript + Vite
+# 🛒 Carrito de Compras - Frontend (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es la implementación del frontend para el carrito de compras, desarrollado con **React + TypeScript**. La aplicación permite listar productos, agregar productos al carrito, optimizar compras dentro de un presupuesto y restablecer productos mediante el consumo de una API en Ruby on Rails.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+##  **Tecnologías Utilizadas**
+- **React 18 + Vite**
+- **TypeScript**
+- **React Router** (para la navegación)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+##  **Requisitos Previos**
+Antes de ejecutar el proyecto, asegúrate de tener instalado:
+- **Node.js** (versión 18 o superior)
+- **npm** (versión 9 o superior)
+- **Un backend funcional en Ruby on Rails**
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+---
+
+## **Instalación y Configuración**
+###  **Clonar el Repositorio**
+```sh
+git clone https://github.com/caltamar/carrito-compras-frontend.git
+cd carrito-compras-frontend
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+###  **Instalar Dependencias**
+```sh
+npm install
 ```
+
+### **Configurar la URL de la API**
+Abre el archivo `src/services/api.ts` y actualiza la constante `API_BASE_URL` con la URL de tu backend en Render:
+
+```tsx
+const API_BASE_URL = "https://tu-api-render.com/api/v1";
+```
+
+---
+
+## **Ejecutar el Proyecto en Desarrollo**
+```sh
+npm run dev
+```
+La aplicación estará disponible en **http://localhost:5173**.
+
+---
+
+## **Estructura del Proyecto**
+📁 `src/`
+- 📂 `components/` → Componentes reutilizables.
+- 📂 `pages/` → Páginas principales (Productos, Carrito, Optimización, Admin).
+- 📂 `services/` → Funciones para consumir la API con Axios.
+- 📂 `utils/` → Funciones auxiliares (como la optimización de compras).
+- 📄 `App.tsx` → Configuración de rutas y navegación.
+- 📄 `main.tsx` → Punto de entrada de la aplicación.
+
+---
+
+## 🛠 **Funcionalidades**
+✅ **Listar productos desde la API**.
+✅ **Agregar productos al carrito**.
+✅ **Optimizar compras dentro de un presupuesto**.
+✅ **Restablecer productos a los valores iniciales**.
+
+---
+
