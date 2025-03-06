@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { findBestCombination } from "../utils/findBestCombination";
-import { fetchProducts } from "../services/api"; // Importamos la función que obtiene productos de la API
+import { fetchProducts } from "../services/api"; 
 import { Container, Typography, Card, CardContent, Button, List, ListItem, ListItemText, TextField } from "@mui/material";
 
 interface Product {
@@ -14,7 +14,7 @@ const BestCombination = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [selectedProducts, setSelectedProducts] = useState<Product[]>([]);
 
-  // 🔥 Cargar productos desde la API al montar el componente
+  // Cargar productos desde la API al montar el componente
   useEffect(() => {
     const loadProducts = async () => {
       try {

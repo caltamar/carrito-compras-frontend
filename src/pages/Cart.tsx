@@ -4,15 +4,13 @@ import { Container, Typography, Card, CardContent, Button, List, ListItem, ListI
 const Cart = () => {
   const { cart, emptyCart } = useCart();
 
-  console.log("Contenido del carrito:", cart); // Verifica que cart es un array de productos
-
   return (
     <Container sx={{ mt: 5 }}>
       <Typography variant="h4" align="center" gutterBottom>
         🛍️ Carrito de Compras
       </Typography>
 
-      {Array.isArray(cart) && cart.length > 0 ? ( // Verifica si cart es un array con elementos
+      {Array.isArray(cart) && cart.length > 0 ? ( 
         <Card sx={{ maxWidth: 600, mx: "auto", p: 3, bgcolor: "background.paper" }}>
           <CardContent>
             <List>
